@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eugene4437.github.io/Intelligent-Video-Hub/sitemap.xml
