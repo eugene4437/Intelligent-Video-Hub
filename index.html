@@ -2,17 +2,79 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Intelligent Video Hub - Landing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Інформаційна система інтелектуальної обробки та семантичного структурування відеоконтенту за допомогою YOLOv8 та Deep Learning.">
+    <meta name="keywords" content="AI, Video Processing, YOLOv8, Deep Learning, Семантичне структурування">
+    <title>Intelligent Video Hub | AI Video Analysis</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Інформаційна система інтелектуальної обробки відеоконтенту</h1>
-        <p>Бакалаврський проєкт Ситника Є.О.</p>
+
+    <header role="banner">
+        <div class="container">
+            <nav role="navigation">
+                <div class="logo">AI<span>VideoHub</span></div>
+                <ul>
+                    <li><a href="#about">Про проєкт</a></li>
+                    <li><a href="#tech">Технології</a></li>
+                    <li><a href="#goals">Мета</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <section>
-        <h2>Про проєкт</h2>
-        <p>Автоматичне структурування відео за допомогою ШІ та нейромережі YOLOv8.</p>
-    </section>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Інтелектуальна обробка <br><span>відеоконтенту</span></h1>
+                <p>Семантичне структурування та аналіз відео за допомогою алгоритмів глибокого навчання (Deep Learning).</p>
+                <div class="hero-btns">
+                    <a href="https://github.com/eugene4437/Intelligent-Video-Hub" class="btn primary">GitHub Репозиторій</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <h2>Про бакалаврський проєкт</h2>
+                <div class="grid">
+                    <article class="card">
+                        <h3>Сегментація сцен</h3>
+                        <p>Автоматичне розділення відеопотоку на логічні сцени на основі гістограмного аналізу кадрів.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Детекція об'єктів</h3>
+                        <p>Використання нейромережі YOLOv8 для ідентифікації об'єктів у реальному часі.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Структурування</h3>
+                        <p>Генерація метаданих та семантичних описів для швидкого пошуку по відеоархіву.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech" id="tech">
+            <div class="container">
+                <h2>Технологічний стек</h2>
+                <div class="tech-list">
+                    <span>Python 3.11</span>
+                    <span>OpenCV</span>
+                    <span>PyTorch</span>
+                    <span>YOLOv8</span>
+                    <span>Streamlit</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 Ситник Є.О. | Сумський державний університет</p>
+            <p>Група ІН-22</p>
+        </div>
+    </footer>
+
 </body>
 </html>
