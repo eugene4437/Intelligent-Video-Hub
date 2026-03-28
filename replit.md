@@ -48,6 +48,49 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 - `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
 - `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
 
+## Artifacts
+
+### `artifacts/video-processor` — Intelligent Video Processing System
+
+A Python Streamlit application for automated video analysis and semantic structuring.
+
+- **Entry**: `app.py` — Streamlit entry point
+- **Language**: Python 3.11
+- **Framework**: Streamlit
+- **Key dependencies**: OpenCV (headless), NumPy, Pandas, Plotly, Pillow, scikit-image, requests
+- **Object detection**: YOLOv3-tiny via OpenCV DNN (weights auto-downloaded to `models/yolo/`)
+- **Run**: `streamlit run app.py --server.port 20426 --server.address 0.0.0.0`
+
+**Project structure inside `artifacts/video-processor/`:**
+```
+app.py                      # Streamlit entry point
+requirements.txt            # Python dependencies
+README.md                   # Project documentation
+LICENSE                     # MIT License
+.gitignore                  # Python gitignore
+src/
+  core/
+    video_processor.py      # OpenCV scene detection engine
+    object_detector.py      # YOLOv3 DNN object detector
+  ui/
+    main_page.py            # Streamlit page layout & orchestration
+  utils/
+    file_utils.py           # File I/O helpers
+    visualization.py        # Plotly chart builders
+data/samples/               # Place sample video files here
+models/yolo/                # YOLO weights downloaded at runtime
+.streamlit/config.toml      # Streamlit server config (dark theme)
+```
+
+**Features:**
+- Drag-and-drop video upload (MP4, AVI, MOV, MKV, WebM, FLV)
+- Automatic scene segmentation using frame-difference analysis
+- YOLOv3-tiny object detection on scene representative frames
+- Interactive Plotly charts (scene timeline, object frequency, confidence histogram)
+- CSV export of scene data and detection results
+
+---
+
 ## Packages
 
 ### `artifacts/api-server` (`@workspace/api-server`)
