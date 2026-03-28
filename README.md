@@ -12,3 +12,16 @@ Intelligent Video Hub
 - `src/` — вихідний код з алгоритмами аналізу та обробки.
 - `models/` — місце для ваг нейронних моделей.
 - `data/` — папка з тестовими відеоматеріалами.
+
+Інструкція для розробника
+
+Залежності
+- Python 3.10+
+- Git
+
+Швидкий старт
+1. Клонувати: `git clone https://github.com/eugene4437/Intelligent-Video-Hub.git`
+2. Створити venv: `python -m venv venv`
+3. Активувати: `venv\Scripts\activate` (Win) або `source venv/bin/activate` (Unix)
+4. Встановити бібліотеки: `pip install -r requirements.txt`
+5. Запуск: `streamlit run main.py`
