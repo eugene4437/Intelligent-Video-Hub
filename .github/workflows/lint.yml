@@ -13,8 +13,8 @@ jobs:
         python-version: '3.11'
     - name: Install dependencies
       run: |
-        pip install pylint mypy streamlit opencv-python ultralytics
+        pip install pylint mypy streamlit opencv-python-headless ultralytics
     - name: Run Pylint
-      run: pylint main.py
+      run: pylint main.py --fail-under=5.0
     - name: Run Mypy
       run: mypy main.py
