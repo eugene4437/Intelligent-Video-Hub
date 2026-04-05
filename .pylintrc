@@ -1,8 +1,15 @@
 [MASTER]
-ignore=venv,data,models
+ignore=venv,data,models,artifacts
 
 [MESSAGES CONTROL]
+# C0114: Missing module docstring
+# C0115: Missing class docstring
+# C0116: Missing function docstring
+# R0903: Too few public methods
 disable=C0114,C0115,C0116,R0903
 
 [FORMAT]
 max-line-length=100
+
+[BASIC]
+good-names=i,j,k,ex,Run,_,id
