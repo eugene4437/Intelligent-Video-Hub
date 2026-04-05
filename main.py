@@ -1,23 +1,25 @@
 """
-Main entry point for the Intelligent Video Processing System.
+Модуль інтелектуальної системи обробки відеоконтенту.
+Цей файл відповідає за інтерфейс користувача та логіку завантаження файлів.
 """
+
 import os
 import tempfile
 from typing import Optional, List, Any
 import streamlit as st
 
 def setup_page() -> None:
-    """Configures the Streamlit page metadata."""
+    """Налаштування метаданих сторінки Streamlit (заголовок, іконка)."""
     st.set_page_config(page_title="AI Video Hub", page_icon="🎬", layout="wide")
 
 def save_video(file_obj: Any) -> str:
-    """Saves uploaded file to a temporary location and returns the path."""
+    """Зберігає завантажений файл у тимчасову директорію та повертає шлях до нього."""
     with tempfile.NamedTemporaryFile(delete=False, suffix='.mp4') as tmp:
         tmp.write(file_obj.read())
         return tmp.name
 
 def main() -> None:
-    """Main application flow with type annotations."""
+    """Головний цикл програми: обробка UI та виклик методів аналізу."""
     setup_page()
     st.title("🎬 Intelligent Video Processing System")
 
