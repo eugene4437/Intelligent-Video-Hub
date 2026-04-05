@@ -1,6 +1,6 @@
 """
 Модуль інтелектуальної системи обробки відеоконтенту.
-Цей файл відповідає за інтерфейс користувача та логіку завантаження файлів.
+Handling UI using Streamlit and coordinating video analysis.
 """
 
 import os
@@ -9,17 +9,17 @@ from typing import Optional, List, Any
 import streamlit as st
 
 def setup_page() -> None:
-    """Налаштування метаданих сторінки Streamlit (заголовок, іконка)."""
+    """Configures page title and icon for the Streamlit web application."""
     st.set_page_config(page_title="AI Video Hub", page_icon="🎬", layout="wide")
 
 def save_video(file_obj: Any) -> str:
-    """Зберігає завантажений файл у тимчасову директорію та повертає шлях до нього."""
+    """Saves the uploaded file and returns the local path to it."""
     with tempfile.NamedTemporaryFile(delete=False, suffix='.mp4') as tmp:
         tmp.write(file_obj.read())
         return tmp.name
 
 def main() -> None:
-    """Головний цикл програми: обробка UI та виклик методів аналізу."""
+    """Main function to run the Streamlit application logic."""
     setup_page()
     st.title("🎬 Intelligent Video Processing System")
 
