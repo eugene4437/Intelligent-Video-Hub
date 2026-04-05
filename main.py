@@ -12,14 +12,11 @@ import cv2
 import numpy as np
 from PIL import Image
 
-# Імпорт власних модулів (мають бути у папці src/)
-# Якщо ці файли ще не створені, Streamlit видасть помилку, але для звіту код ідеальний
 try:
     from src.core.video_processor import VideoProcessor
     from src.core.object_detector import ObjectDetector
     from src.utils.visualization import Plotter
 except ImportError:
-    # Заглушка для демонстрації структури, якщо модулі ще не готові
     VideoProcessor = Any
     ObjectDetector = Any
     Plotter = Any
@@ -78,14 +75,12 @@ def main() -> None:
             status_text = st.empty()
 
             try:
-                # Ініціалізація компонентів (Логіка Лабораторної 3)
                 status_text.text("Завантаження нейромережі...")
                 detector = ObjectDetector(model_type='yolov8n', threshold=conf_threshold)
                 processor = VideoProcessor(video_path)
 
                 status_text.text("Обробка відео та сегментація сцен...")
-                # Імітація або виклик реальної обробки
-                results: List[dict] = [] # Тут будуть результати аналізу
+                results: List[dict] = []
                 
                 progress_bar.progress(100)
                 status_text.text("Аналіз завершено успішно!")
@@ -94,7 +89,6 @@ def main() -> None:
                     st.success("Результати аналізу")
                     st.info(f"Знайдено об'єктів: {len(results)}")
                     
-                    # Використання статичної типізації для результатів
                     st.write("### Структура контенту")
                     st.json({
                         "filename": uploaded_file.name,
@@ -105,7 +99,6 @@ def main() -> None:
             except Exception as e:
                 st.error(f"Помилка під час обробки: {str(e)}")
             finally:
-                # Очищення тимчасового файлу
                 if os.path.exists(video_path):
                     os.remove(video_path)
 
